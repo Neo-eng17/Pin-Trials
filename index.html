@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Shiku ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-b from-[#7a0000] to-[#b22222] text-white overflow-x-hidden font-sans relative">
+
+<!-- Floating Love Icons -->
+<div id="love-bg" class="fixed inset-0 z-0 pointer-events-none"></div>
+
+<!-- PAGE 1 – Our Beginning -->
+<section class="min-h-screen flex flex-col justify-center px-6 relative z-10 text-center">
+  <h1 class="text-3xl font-bold text-[#D4AF37] mb-6">Shiku.</h1>
+  <p class="leading-relaxed text-lg">
+    I walked into your workplace just to buy shoes.
+    I didn’t know I was walking into my future.
+  </p>
+  <p class="mt-4">
+    A short conversation became a text.  
+    A text became a confession.  
+    A confession became a connection.
+  </p>
+  <p class="mt-4">
+    For over 3 years, we’ve fought, laughed, learned, and chosen each other again.
+    Even when I was breathing fire. Even when I was distant.
+  </p>
+  <p class="mt-4 font-semibold text-[#D4AF37]">
+    You stayed. And you loved anyway.
+  </p>
+</section>
+
+<!-- PAGE 2 – Who You Are -->
+<section class="min-h-screen flex flex-col justify-center px-6 relative z-10 text-center">
+  <h2 class="text-2xl text-[#D4AF37] font-bold mb-6">What I See In You</h2>
+
+  <p class="mb-4">
+    You are royal. And loyal.
+  </p>
+  <p class="mb-4">
+    Your determination to grow our love has changed everything.
+  </p>
+  <p class="mb-4">
+    Your emotional intelligence has grown fast — and beautifully.
+  </p>
+  <p class="mb-4">
+    Your laughter… especially when you’re being naughty 🥵 — that one gets me every time.
+  </p>
+  <p>
+    Your maturity. Your desire to be the source and the peace I seek.
+  </p>
+</section>
+
+<!-- PAGE 3 – My Declaration -->
+<section class="min-h-screen flex flex-col justify-center px-6 relative z-10 text-center">
+  <h2 class="text-2xl text-[#D4AF37] font-bold mb-6">My Queen</h2>
+
+  <p class="mb-4">
+    Love with you is not noise. It is growth.
+  </p>
+  <p class="mb-4">
+    I don’t just want to provide for you.
+    I want us to build.
+  </p>
+  <p class="mb-4">
+    Two strong individuals. One direction.
+  </p>
+  <p class="mb-6">
+    I am proud of who you are becoming.
+  </p>
+
+  <p class="text-xl font-semibold text-[#D4AF37]">
+    You are rare. And I choose you.
+  </p>
+</section>
+
+<!-- PAGE 4 – Gifts -->
+<section class="min-h-screen flex flex-col justify-center items-center px-6 relative z-10 text-center">
+
+  <h2 class="text-2xl text-[#D4AF37] font-bold mb-8">Your Gifts</h2>
+
+  <!-- Letter Card -->
+  <div class="gift-card bg-[#5a0000] p-6 rounded-lg shadow-xl mb-6 w-full max-w-sm cursor-pointer relative">
+    <p class="text-lg">Open Your Letter 💌</p>
+  </div>
+
+  <!-- Music Card -->
+  <div class="music-card bg-[#5a0000] p-6 rounded-lg shadow-xl mb-6 w-full max-w-sm cursor-pointer">
+    <p class="text-lg">Play Our Song 🎶</p>
+  </div>
+
+  <!-- Surprise Card -->
+  <div class="surprise-card bg-[#5a0000] p-6 rounded-lg shadow-xl w-full max-w-sm cursor-pointer">
+    <p class="text-lg">Tap For A Surprise ✨</p>
+  </div>
+
+  <!-- Letter Modal -->
+  <div id="letterModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 z-20">
+    <div class="bg-[#7a0000] p-6 rounded-lg max-w-md text-left relative">
+      <p id="typedLetter" class="leading-relaxed"></p>
+      <button onclick="closeLetter()" class="mt-4 text-[#D4AF37]">Close</button>
+    </div>
+  </div>
+
+  <!-- Music Modal -->
+  <div id="musicModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 z-20">
+    <div class="bg-[#7a0000] p-4 rounded-lg w-full max-w-md relative">
+      <iframe class="w-full h-64"
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        allowfullscreen>
+      </iframe>
+      <button onclick="closeMusic()" class="mt-4 text-[#D4AF37]">Close</button>
+    </div>
+  </div>
+
+  <!-- Surprise Message -->
+  <div id="surpriseText" class="fixed bottom-20 text-[#D4AF37] text-lg opacity-0 transition-opacity duration-700">
+    Certified Rare. 1 of 1. Shiku.
+  </div>
+
+</section>
+
+<footer class="text-center text-xs py-6 opacity-60 relative z-10">
+  © Martha Shiku 2026
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
