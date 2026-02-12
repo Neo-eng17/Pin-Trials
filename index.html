@@ -1,132 +1,189 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Shiku ❤️</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Valentine's Surprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #fff1f2; /* rose-50 */
+        }
+        .perspective-1000 { perspective: 1000px; }
+        .transition-all { transition: all 0.5s ease; }
+        .hidden { display: none !important; }
+        
+        /* Background Particles */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+            animation: float-up linear forwards;
+        }
+        @keyframes float-up {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Modal Overlay Blur */
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+
+        /* 3D Heart Rotation */
+        @keyframes rotate-y {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+        .animate-rotate-y {
+            animation: rotate-y 10s linear infinite;
+        }
+    </style>
+
 </head>
+<body class="selection:bg-rose-200">
+    <!-- Floating Background -->
+    <div id="particle-container" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
 
-<body class="bg-gradient-to-b from-[#7a0000] to-[#b22222] text-white overflow-x-hidden font-sans relative">
-
-<!-- Floating Love Icons -->
-<div id="love-bg" class="fixed inset-0 z-0 pointer-events-none"></div>
-
-<!-- PAGE 1 – Our Beginning -->
-<section class="min-h-screen flex flex-col justify-center px-6 relative z-10 text-center">
-  <h1 class="text-3xl font-bold text-[#D4AF37] mb-6">Shiku.</h1>
-  <p class="leading-relaxed text-lg">
-    I walked into your workplace just to buy shoes.
-    I didn’t know I was walking into my future.
-  </p>
-  <p class="mt-4">
-    A short conversation became a text.  
-    A text became a confession.  
-    A confession became a connection.
-  </p>
-  <p class="mt-4">
-    For over 3 years, we’ve fought, laughed, learned, and chosen each other again.
-    Even when I was breathing fire. Even when I was distant.
-  </p>
-  <p class="mt-4 font-semibold text-[#D4AF37]">
-    You stayed. And you loved anyway.
-  </p>
-</section>
-
-<!-- PAGE 2 – Who You Are -->
-<section class="min-h-screen flex flex-col justify-center px-6 relative z-10 text-center">
-  <h2 class="text-2xl text-[#D4AF37] font-bold mb-6">What I See In You</h2>
-
-  <p class="mb-4">
-    You are royal. And loyal.
-  </p>
-  <p class="mb-4">
-    Your determination to grow our love has changed everything.
-  </p>
-  <p class="mb-4">
-    Your emotional intelligence has grown fast — and beautifully.
-  </p>
-  <p class="mb-4">
-    Your laughter… especially when you’re being naughty 🥵 — that one gets me every time.
-  </p>
-  <p>
-    Your maturity. Your desire to be the source and the peace I seek.
-  </p>
-</section>
-
-<!-- PAGE 3 – My Declaration -->
-<section class="min-h-screen flex flex-col justify-center px-6 relative z-10 text-center">
-  <h2 class="text-2xl text-[#D4AF37] font-bold mb-6">My Queen</h2>
-
-  <p class="mb-4">
-    Love with you is not noise. It is growth.
-  </p>
-  <p class="mb-4">
-    I don’t just want to provide for you.
-    I want us to build.
-  </p>
-  <p class="mb-4">
-    Two strong individuals. One direction.
-  </p>
-  <p class="mb-6">
-    I am proud of who you are becoming.
-  </p>
-
-  <p class="text-xl font-semibold text-[#D4AF37]">
-    You are rare. And I choose you.
-  </p>
-</section>
-
-<!-- PAGE 4 – Gifts -->
-<section class="min-h-screen flex flex-col justify-center items-center px-6 relative z-10 text-center">
-
-  <h2 class="text-2xl text-[#D4AF37] font-bold mb-8">Your Gifts</h2>
-
-  <!-- Letter Card -->
-  <div class="gift-card bg-[#5a0000] p-6 rounded-lg shadow-xl mb-6 w-full max-w-sm cursor-pointer relative">
-    <p class="text-lg">Open Your Letter 💌</p>
-  </div>
-
-  <!-- Music Card -->
-  <div class="music-card bg-[#5a0000] p-6 rounded-lg shadow-xl mb-6 w-full max-w-sm cursor-pointer">
-    <p class="text-lg">Play Our Song 🎶</p>
-  </div>
-
-  <!-- Surprise Card -->
-  <div class="surprise-card bg-[#5a0000] p-6 rounded-lg shadow-xl w-full max-w-sm cursor-pointer">
-    <p class="text-lg">Tap For A Surprise ✨</p>
-  </div>
-
-  <!-- Letter Modal -->
-  <div id="letterModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 z-20">
-    <div class="bg-[#7a0000] p-6 rounded-lg max-w-md text-left relative">
-      <p id="typedLetter" class="leading-relaxed"></p>
-      <button onclick="closeLetter()" class="mt-4 text-[#D4AF37]">Close</button>
+    <!-- Progress Bar -->
+    <div id="progress-bar-container" class="fixed top-8 left-1/2 -translate-x-1/2 z-40 hidden flex items-center space-x-2 bg-white/80 backdrop-blur px-6 py-3 rounded-full shadow-lg border border-rose-100">
+        <div class="flex items-center" id="progress-steps"></div>
     </div>
-  </div>
 
-  <!-- Music Modal -->
-  <div id="musicModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 z-20">
-    <div class="bg-[#7a0000] p-4 rounded-lg w-full max-w-md relative">
-      <iframe class="w-full h-64"
-        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-        allowfullscreen>
-      </iframe>
-      <button onclick="closeMusic()" class="mt-4 text-[#D4AF37]">Close</button>
+    <!-- Landing Section -->
+    <section id="landing-section" class="relative flex flex-col items-center justify-center min-h-screen text-center p-6 z-10">
+        <div class="max-w-3xl space-y-8">
+            <div class="bg-white/30 p-4 rounded-full inline-block backdrop-blur-sm border border-white/50">
+                <i data-lucide="heart" class="w-12 h-12 md:w-16 md:h-16 text-rose-500 fill-rose-500"></i>
+            </div>
+            <h1 class="text-3xl md:text-6xl font-extrabold text-rose-900 tracking-tight leading-tight px-2">
+                My Special Valentine's Surprise <br />
+                <span class="text-rose-600">For you My Queen</span>
+            </h1>
+            <p class="text-base md:text-xl text-rose-800/80 max-w-xl mx-auto font-medium px-4">
+                Today, let's rediscover why we're inseparable.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-8 px-4 w-full max-w-md mx-auto md:max-w-none">
+                <button onclick="window.startJourney(false)" class="w-full md:w-auto px-6 py-4 bg-white border-2 border-rose-200 text-rose-700 rounded-2xl font-semibold shadow-sm hover:scale-105 transition-transform active:scale-95">
+                    What if our love story was an adventure?
+                </button>
+                <button onclick="window.startJourney(true)" class="w-full md:w-auto px-8 py-4 bg-rose-600 text-white rounded-2xl font-bold shadow-xl shadow-rose-200 hover:bg-rose-700 hover:scale-105 transition-transform active:scale-95 flex items-center justify-center group">
+                    Ready to unlock the depths?
+                    <i data-lucide="chevron-right" class="ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Narrative Section -->
+    <section id="narrative-section" class="hidden min-h-screen flex items-center justify-center p-4 md:p-6 pt-24 z-10">
+        <div class="max-w-2xl w-full bg-white/40 backdrop-blur-md rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-12 shadow-2xl border border-white/60 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <i data-lucide="heart" class="w-24 h-24 md:w-32 md:h-32 fill-rose-500 text-rose-500"></i>
+            </div>
+            <span id="narrative-chapter" class="text-rose-500 font-bold uppercase tracking-widest text-xs md:text-sm mb-4 block">Chapter 1</span>
+            <h2 id="narrative-title" class="text-2xl md:text-4xl font-bold text-rose-900 mb-6">Title</h2>
+            <p id="narrative-content" class="text-base md:text-xl text-stone-800 leading-relaxed font-medium">Content</p>
+            <button onclick="window.triggerQuiz()" class="mt-8 md:mt-12 w-full md:w-auto px-8 py-4 bg-rose-600 text-white rounded-2xl font-bold shadow-lg hover:bg-rose-700 transition-all flex items-center justify-center">
+                Continue the Story
+                <i data-lucide="chevron-right" class="ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Gifts Section -->
+    <section id="gifts-section" class="hidden min-h-screen bg-gradient-to-br from-rose-950 to-stone-950 p-4 md:p-6 pt-24 pb-32 relative z-10">
+        <button onclick="window.restartAdventure()" class="fixed top-6 left-6 z-50 flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full border border-white/20 transition-all text-xs md:text-sm font-medium">
+            <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+            <span>Back to Start</span>
+        </button>
+        <button onclick="window.goToClosing()" class="fixed bottom-6 right-6 z-50 flex items-center space-x-2 bg-rose-600 hover:bg-rose-500 text-white px-6 py-3 rounded-full shadow-lg shadow-rose-900/50 transition-all font-bold">
+            <span>Continue</span>
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </button>
+        <div class="max-w-4xl mx-auto text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-rose-200 mb-4">Your Valentine's Treasures</h2>
+            <p class="text-rose-400">Click to unlock each token of my love</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto" id="gifts-grid"></div>
+    </section>
+
+    <!-- Closing Section -->
+    <section id="closing-section" class="hidden relative min-h-screen w-full flex flex-col items-center justify-center bg-rose-50 overflow-hidden z-10">
+        <button onclick="window.goToGifts()" class="fixed top-6 left-6 z-50 flex items-center space-x-2 bg-rose-100/80 hover:bg-rose-200 text-rose-700 px-4 py-2 rounded-full border border-rose-200 transition-all text-xs md:text-sm font-bold backdrop-blur-sm">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Back</span>
+        </button>
+        <div class="relative w-full h-screen flex flex-col items-center justify-center p-6 text-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-rose-200/50 to-transparent z-10"></div>
+            <div class="z-20 space-y-8">
+                <div class="flex flex-col items-center">
+                    <div class="relative">
+                        <i data-lucide="heart" class="w-24 h-24 md:w-32 md:h-32 text-rose-500 fill-rose-500 mb-6 animate-pulse"></i>
+                        <div class="absolute inset-0 bg-rose-400 rounded-full blur-xl -z-10 opacity-50"></div>
+                    </div>
+                    <h1 class="text-4xl md:text-7xl font-black text-rose-900 drop-shadow-sm px-4">Happy Valentine's Day</h1>
+                    <p class="mt-6 text-lg md:text-2xl text-rose-700/80 font-medium max-w-2xl px-4">
+                        Thank you for being my source of peace, my queen. <br class="hidden md:block" />
+                        This is just the beginning of our forever.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <button onclick="window.restartAdventure()" class="fixed bottom-10 right-10 z-50 flex items-center space-x-3 bg-rose-600 hover:bg-rose-700 text-white px-6 md:px-8 py-4 rounded-2xl shadow-2xl shadow-rose-300 transition-all font-black text-base md:text-lg group active:scale-95">
+            <i data-lucide="play" class="fill-current w-5 h-5"></i>
+            <span>Start the Adventure</span>
+        </button>
+    </section>
+
+    <!-- Quiz Modal Overlay -->
+    <div id="quiz-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl border-4 border-rose-100 transform transition-all duration-300">
+            <div class="flex justify-center mb-4 md:mb-6">
+                <div class="bg-rose-100 p-3 rounded-full">
+                    <i data-lucide="sparkles" class="text-rose-500 w-6 h-6 md:w-8 md:h-8"></i>
+                </div>
+            </div>
+            <h3 id="quiz-question" class="text-xl md:text-2xl font-bold text-center text-gray-800 mb-6 md:mb-8 leading-tight">Question?</h3>
+            <div id="quiz-options" class="space-y-3 md:space-y-4"></div>
+            <div id="quiz-feedback" class="hidden mt-4 md:mt-6 p-4 rounded-xl text-center text-sm font-medium">Feedback</div>
+        </div>
     </div>
-  </div>
 
-  <!-- Surprise Message -->
-  <div id="surpriseText" class="fixed bottom-20 text-[#D4AF37] text-lg opacity-0 transition-opacity duration-700">
-    Certified Rare. 1 of 1. Shiku.
-  </div>
+    <!-- Gift Detail Modal -->
+    <div id="gift-modal" class="hidden fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 md:p-8">
+        <div class="w-full max-w-3xl bg-stone-900 rounded-3xl overflow-hidden shadow-2xl relative">
+            <button id="gift-back-btn" onclick="window.closeGiftModal()" class="absolute top-6 left-6 p-2 rounded-full z-10 transition-all">
+                <i data-lucide="arrow-left" class="w-6 h-6"></i>
+            </button>
+            <div id="gift-content-area" class="p-6 md:p-12 overflow-y-auto max-h-[85vh]"></div>
+        </div>
+    </div>
 
-</section>
+    <!-- Footer -->
+    <footer id="global-footer" class="fixed bottom-0 w-full p-4 flex justify-between items-center text-rose-900/40 text-[10px] md:text-sm font-medium z-30 pointer-events-none">
+        <div class="pointer-events-auto">© 2026 MK</div>
+        <a href="https://wa.me/0743427717" target="_blank" class="pointer-events-auto flex items-center bg-white/60 backdrop-blur-sm px-3 md:px-4 py-2 rounded-full hover:bg-white/80 transition-all text-rose-600">
+            <i data-lucide="message-circle" class="mr-1 md:mr-2 w-3 h-3 md:w-4 md:h-4"></i>
+            Talk to me
+        </a>
+    </footer>
 
-<footer class="text-center text-xs py-6 opacity-60 relative z-10">
-  © Martha Shiku 2026
-</footer>
-
-<script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+<script src="script.js" defer></script>
 </body>
+
 </html>
