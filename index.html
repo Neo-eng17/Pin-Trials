@@ -70,20 +70,26 @@
                 <i data-lucide="heart" class="w-12 h-12 md:w-16 md:h-16 text-rose-500 fill-rose-500"></i>
             </div>
             <h1 class="text-3xl md:text-6xl font-extrabold text-rose-900 tracking-tight leading-tight px-2">
-                My Special Valentine's Surprise <br />
-                <span class="text-rose-600">For you My Queen</span>
+                My Special Valentine's  <br />
+                <span class="font-medium px-3 text-rose-600">For you My Queen</span>
             </h1>
             <p class="text-base md:text-xl text-rose-800/80 max-w-xl mx-auto font-medium px-4">
-                Today, let's rediscover why we're inseparable.
+                Today, let's rediscover why we're met to be.
             </p>
             <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-8 px-4 w-full max-w-md mx-auto md:max-w-none">
-                <button onclick="window.startJourney(false)" class="w-full md:w-auto px-6 py-4 bg-white border-2 border-rose-200 text-rose-700 rounded-2xl font-semibold shadow-sm hover:scale-105 transition-transform active:scale-95">
-                    What if our love story was an adventure?
-                </button>
-                <button onclick="window.startJourney(true)" class="w-full md:w-auto px-8 py-4 bg-rose-600 text-white rounded-2xl font-bold shadow-xl shadow-rose-200 hover:bg-rose-700 hover:scale-105 transition-transform active:scale-95 flex items-center justify-center group">
-                    Ready to unlock the depths?
-                    <i data-lucide="chevron-right" class="ml-2 group-hover:translate-x-1 transition-transform"></i>
-                </button>
+                <button onclick="window.showSameEnergyFeedback()" 
+    class="w-full md:w-auto px-6 py-4 bg-white border-2 border-rose-200 text-rose-700 rounded-2xl font-semibold shadow-sm hover:scale-105 transition-transform active:scale-95">
+    Well, ours is worth exploring, isn't it?
+</button>
+
+<button onclick="window.startJourney(true)" 
+    class="w-full md:w-auto px-8 py-4 bg-rose-600 text-white rounded-2xl font-bold shadow-xl shadow-rose-200 hover:bg-rose-700 hover:scale-105 transition-transform active:scale-95 flex items-center justify-center group">
+    Ride with me into the adventure
+    <i data-lucide="chevron-right" class="ml-2 group-hover:translate-x-1 transition-transform"></i>
+</button>
+<p id="journey-feedback"
+       class="absolute left-1/2 -translate-x-1/2 top-[90%] mt-1 text-green-600 font-medium opacity-0 transition-all duration-300 pointer-events-none">
+    </p>
             </div>
         </div>
     </section>

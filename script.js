@@ -105,6 +105,35 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0);
     };
 
+
+
+    window.showSameEnergyFeedback = function () {
+    const feedbackEl = document.getElementById("journey-feedback");
+    if (!feedbackEl) return;
+
+    const message = "I knew you felt the same 😉";
+    feedbackEl.textContent = message;
+
+    // Reset state in case it's mid-animation
+    feedbackEl.classList.add("opacity-0", "translate-y-2");
+
+    // Small reflow trick so animation always triggers
+    void feedbackEl.offsetWidth;
+
+    // Fade + slide in
+    feedbackEl.classList.remove("opacity-0", "translate-y-2");
+
+    // Reading speed logic
+    const words = message.split(" ").length;
+    const readingTime = words * 200;
+    const totalVisibleTime = Math.max(1000, readingTime);
+
+    setTimeout(() => {
+        feedbackEl.classList.add("opacity-0", "translate-y-2");
+    }, totalVisibleTime);
+};
+
+
     function renderProgressBar() {
         const stepsContainer = document.getElementById('progress-steps');
         if (!stepsContainer) return;
@@ -239,18 +268,39 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         contentArea.innerHTML = `
-            <div class="bg-[#fdfcf0] p-6 md:p-8 rounded shadow-inner border border-stone-200 min-h-[250px] relative font-serif italic text-base md:text-lg text-stone-800 leading-relaxed">
-                <div class="absolute top-4 right-6 text-stone-300 font-sans text-[10px] uppercase tracking-widest">Nakapenda</div>
-                <p id="typewriter-text"></p>
-                <div class="mt-8 text-right font-bold text-rose-500">— with Love</div>
-            </div>
-        `;
+            <div class="relative p-8 md:p-10 rounded-3xl 
+    bg-gradient-to-br from-pink-50 via-rose-100 to-red-200
+    shadow-[0_20px_50px_rgba(244,63,94,0.25)]
+    border border-rose-300/40
+    min-h-[260px] overflow-hidden
+    font-serif text-base md:text-lg text-rose-950 leading-relaxed">
+
+    <!-- Ambient glow layers -->
+    <div class="absolute -top-12 -right-12 w-52 h-52 bg-rose-400/20 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-12 -left-12 w-52 h-52 bg-red-400/20 rounded-full blur-3xl"></div>
+
+    <!-- Subtle decorative line -->
+    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-rose-400 to-transparent"></div>
+
+    <!-- Header tag -->
+    <div class="absolute top-4 right-6 text-rose-500 font-sans text-[10px] uppercase tracking-[0.2em]">
+        Nakapenda
+    </div>
+
+    <!-- Typewriter content -->
+    <p id="typewriter-text" class="relative z-10 italic"></p>
+
+    <!-- Signature -->
+    <div class="mt-10 text-right font-semibold text-rose-700 tracking-wide">
+        — with Love ❤️
+    </div>
+</div> `;
 
         const paragraphs = [
   "Shiku,",
   "From the very first moment our paths crossed, I felt something I couldn't quite put into words. I thought I was just passing through, but you stopped me in my tracks and changed my world. What began with a smile, a glance, and 1000+ Chats and calls has grown into a bond that has strengthened over time.",
 "We have fought. We have laughed. We have grown. You’ve witnessed every side of me; the calm, the storm, the silence, and the chaos, and through it all, you’ve chosen to stay $ love anyway👩‍❤️‍💋‍👨. Honestly babygal, your loyalty is rare, and because of it my ordinary days feel valuable and worth living. ",
-"You are not just someone I love, you are my partner, my source of peace, and most importantly, my 👸🏻. You’re my everything, baby girl. And I’m forever yours."
+"You are not just someone I love, you are my partner, my source of peace, and most importantly, my Queen👸🏻. You’re my everything, baby girl. And I’m forever yours."
 ];
         runTypewriter(paragraphs);
 
@@ -289,10 +339,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="space-y-3">
                         <h3 class="text-2xl md:text-3xl font-bold text-rose-200">My Eternal Promise</h3>
-                        <p class="text-lg md:text-xl text-rose-100 italic">"My love for you is timeless"</p>
                         <p class="text-rose-400 max-w-md mx-auto text-sm md:text-base px-2">
-                            Shiku, you are my forever.
+                            This Icon represents a promise that, just as my soul within is eternal, so is my love for you ❤️‍🔥. No matter where life takes us, this promise will always be a reminder of our unbreakable bond and the love that will endure forever. 
                         </p>
+                        <p class="text-lg md:text-xl text-rose-100 italic">"Te amo, mi amor 🌹. "</p>
                     </div>
                 </div>
             `;
