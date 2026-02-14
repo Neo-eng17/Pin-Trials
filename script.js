@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const GIFTS = [
         { id: 'letter', title: 'A Royal Letter', icon: 'mail', desc: "For my Queen's eyes only", color: "bg-rose-700" },
-        { id: 'music', title: 'Our Melody', icon: 'music', desc: "Disfruto - Carla Morrison", color: "bg-rose-800" },
+        { id: 'music', title: 'Our Melody', icon: 'music', desc: "Westlife - Hello My Love", color: "bg-rose-800" },
         { id: 'locket', title: 'Eternal Promise', icon: 'lock', desc: "A vow sealed forever", color: "bg-rose-900" }
     ];
 
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contentArea.innerHTML = `
                 <div class="aspect-video w-full rounded-2xl overflow-hidden bg-black shadow-2xl">
                     <iframe class="w-full h-full" 
-                        src="https://www.youtube.com/embed/tZqUTu1FM4I?list=RDtZqUTu1FM4I" 
+                        src="https://www.youtube.com/embed/tZqUTu1FM4I" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
